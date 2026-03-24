@@ -12,8 +12,8 @@
 <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{zoom:1.33}
-/* ── 移动端适配 ── */
+/* 桌面端缩放（iOS 不支持 CSS zoom，用 -webkit-text-size-adjust 配合） */
+html{zoom:1.33; -webkit-text-size-adjust:100%;}
 /* iOS 安全区域适配 */
 @supports(padding: env(safe-area-inset-top)){
   body{
@@ -50,7 +50,8 @@ html{zoom:1.33}
 html,body{width:100%;height:100%;background:var(--bg);color:var(--text);
   font-family:Arial,'Microsoft YaHei','PingFang SC',sans-serif;
   overflow:hidden;user-select:none;
-  -webkit-overflow-scrolling:touch;overscroll-behavior:none;touch-action:none}
+  -webkit-overflow-scrolling:touch;overscroll-behavior:none;touch-action:none;
+  -webkit-user-select:none;}
 
 /* ── 自适应：仅在低分辨率下降级 ─────── */
 @media (max-width:1280px){ html{zoom:1.1} }
@@ -67,13 +68,22 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);
    ── 移动端完整适配（手机横竖屏）──
    ══════════════════════════════════════════════ */
 @media (max-width:960px), (max-height:500px) and (orientation:landscape){
-  html{zoom:1 !important; font-size:14px;}
-  html,body{overflow:visible !important; touch-action:auto !important;}
+  /* iOS 不支持 CSS zoom，必须清除 */
+  html{zoom:1 !important; -webkit-text-size-adjust:100%; font-size:14px;}
+  /* 允许页面整体滚动（iOS 关键：height→min-height） */
+  html{height:auto !important; min-height:100%;}
+  body{height:auto !important; min-height:100%;
+    overflow:visible !important; overflow-y:auto !important;
+    touch-action:auto !important;
+    -webkit-overflow-scrolling:touch !important;}
 
   /* ── 大厅：可滚动 ── */
-  #slob{overflow-y:auto !important; -webkit-overflow-scrolling:touch;
+  #slob{overflow:visible !important; overflow-y:auto !important;
+    -webkit-overflow-scrolling:touch !important;
     align-items:flex-start !important; justify-content:flex-start !important;
-    padding:16px 0 40px !important;}
+    padding:16px 0 60px !important;
+    height:auto !important; min-height:100vh; min-height:100dvh;
+    position:relative !important;}
   .lwrap{width:92vw !important; max-width:460px; padding:12px;
     margin:0 auto; flex-shrink:0;}
   .title{font-size:22px !important;}
@@ -149,6 +159,14 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);
   /* ── 商店 ── */
   .shop-grid{grid-template-columns:1fr !important;}
   .gacha-tier{padding:8px !important;}
+
+  /* ── .screen 基础覆盖（iOS 关键） ── */
+  .screen{position:relative !important; height:auto !important;
+    min-height:100vh !important; min-height:100dvh !important;}
+  .screen.active{display:flex !important;}
+  /* 游戏界面例外：保持全屏固定 */
+  #sg.screen{position:absolute !important; height:100% !important;
+    min-height:0 !important; overflow:hidden !important;}
 }
 
 /* 手机竖屏 */
@@ -162,18 +180,32 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);
 }
 
 /* 手机横屏 */
-@media (max-height:450px) and (orientation:landscape){
+@media (max-height:500px) and (orientation:landscape){
   html{zoom:1 !important;}
-  #slob{flex-direction:row !important; align-items:center !important;
-    justify-content:center !important; padding:8px !important;}
-  .lwrap{width:70vw !important; max-width:520px;}
+  #slob{align-items:flex-start !important; justify-content:flex-start !important;
+    padding:8px 0 40px !important;}
+  .lwrap{width:80vw !important; max-width:520px;}
+  .title{font-size:18px !important;}
   .wavepick-grid{grid-template-columns:repeat(3,1fr) !important;}
+  .wbtn{padding:6px 4px !important;}
+  .wbtn .wico{font-size:14px !important;}
+  .wbtn .wlbl{font-size:9px !important;}
   .sp{max-height:45vh !important;}
   .sscroll{max-height:28vh !important;}
   .hud{min-height:28px !important;}
   .hstat{font-size:10px !important;}
   .harea{min-height:40px !important;}
   .hcard{width:36px !important; height:48px !important;}
+}
+
+/* ── JS 注入的方向类（iOS 兜底）── */
+html.is-portrait #slob{
+  overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch !important;
+}
+html.is-landscape #slob{
+  overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch !important;
 }
 
 /* ── 通用 ─────────────────────────────── */
@@ -11964,6 +11996,41 @@ document.addEventListener('touchend',e=>{
 
   document.getElementById('orient-yes').addEventListener('click', ()=>dismiss(true));
   document.getElementById('orient-no').addEventListener('click', ()=>dismiss(false));
+})();
+
+// ── iOS/Android 屏幕方向变化监听 ──
+(function(){
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if(!isMobile) return;
+
+  function onOrientChange(){
+    const w = window.innerWidth, h = window.innerHeight;
+    const isLand = w > h;
+    document.documentElement.classList.toggle('is-landscape', isLand);
+    document.documentElement.classList.toggle('is-portrait', !isLand);
+
+    // 动态调整 viewport（iOS Safari 横屏时 100vh 包含地址栏高度）
+    document.documentElement.style.setProperty('--real-vh', (h * 0.01) + 'px');
+  }
+
+  // 多种方式监听，确保 iOS 覆盖
+  window.addEventListener('resize', onOrientChange);
+  window.addEventListener('orientationchange', ()=>{
+    // iOS orientationchange 后尺寸可能延迟更新
+    setTimeout(onOrientChange, 100);
+    setTimeout(onOrientChange, 300);
+  });
+  // matchMedia 是 iOS 最可靠的方式
+  try{
+    const mql = window.matchMedia('(orientation: landscape)');
+    if(mql.addEventListener){
+      mql.addEventListener('change', onOrientChange);
+    } else if(mql.addListener){
+      mql.addListener(onOrientChange);
+    }
+  }catch(_){}
+
+  onOrientChange(); // 初始化
 })();
 </script>
 </body>
