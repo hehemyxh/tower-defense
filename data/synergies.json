@@ -1,0 +1,212 @@
+[
+  {
+    "id": "arcane",
+    "name": "奥术法师",
+    "emoji": "🔮",
+    "category": "功能系",
+    "chars": [
+      "c11001",
+      "c11002",
+      "c11003",
+      "c11004",
+      "c11005",
+      "c11006"
+    ],
+    "tiers": [
+      {
+        "need": 2,
+        "desc": "2件套：法术伤害+20%，攻击有15%概率弹射1个目标（50%伤害）",
+        "fx": {
+          "dmg": 0.2
+        },
+        "buffDefs": [
+          {
+            "id": "arcane_dmg_2",
+            "source": "synergy",
+            "stat": "dmg",
+            "op": "multiply",
+            "value": 1.2,
+            "duration": -1,
+            "stackRule": "replace"
+          }
+        ]
+      },
+      {
+        "need": 4,
+        "desc": "4件套：法术伤害+45%，弹射概率+30%，弹射可跳2目标",
+        "fx": {
+          "dmg": 0.45
+        },
+        "buffDefs": [
+          {
+            "id": "arcane_dmg_4",
+            "source": "synergy",
+            "stat": "dmg",
+            "op": "multiply",
+            "value": 1.45,
+            "duration": -1,
+            "stackRule": "replace"
+          }
+        ]
+      },
+      {
+        "need": 6,
+        "desc": "6件套：法术伤害+80%，每15次攻击触发魔法风暴（范围100%伤害/秒持续5秒）",
+        "fx": {
+          "dmg": 0.8
+        },
+        "buffDefs": [
+          {
+            "id": "arcane_dmg_6",
+            "source": "synergy",
+            "stat": "dmg",
+            "op": "multiply",
+            "value": 1.8,
+            "duration": -1,
+            "stackRule": "replace"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ranger",
+    "name": "游侠射手",
+    "emoji": "🏹",
+    "category": "功能系",
+    "chars": [
+      "c12001",
+      "c12002",
+      "c12003",
+      "c12004",
+      "c12005",
+      "c12006"
+    ],
+    "tiers": [
+      {
+        "need": 2,
+        "desc": "2件套：射程+15%，攻击穿透第一个目标对后方目标造成50%伤害",
+        "fx": {
+          "rng": 0.15
+        },
+        "buffDefs": [
+          {
+            "id": "ranger_rng_2",
+            "source": "synergy",
+            "stat": "range",
+            "op": "multiply",
+            "value": 1.15,
+            "duration": -1,
+            "stackRule": "replace"
+          }
+        ]
+      },
+      {
+        "need": 4,
+        "desc": "4件套：射程+30%，每5次攻击发射3连射（各60%伤害）",
+        "fx": {
+          "rng": 0.3
+        },
+        "buffDefs": [
+          {
+            "id": "ranger_rng_4",
+            "source": "synergy",
+            "stat": "range",
+            "op": "multiply",
+            "value": 1.3,
+            "duration": -1,
+            "stackRule": "replace"
+          }
+        ]
+      },
+      {
+        "need": 6,
+        "desc": "6件套：射程+50%，暴击率+35%，每18次攻击穿透全部目标400%伤害",
+        "fx": {
+          "rng": 0.5
+        },
+        "buffDefs": [
+          {
+            "id": "ranger_rng_6",
+            "source": "synergy",
+            "stat": "range",
+            "op": "multiply",
+            "value": 1.5,
+            "duration": -1,
+            "stackRule": "replace"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "warrior",
+    "name": "战士先锋",
+    "emoji": "⚔️",
+    "category": "功能系",
+    "chars": [
+      "c13001",
+      "c13002",
+      "c13003",
+      "c13004",
+      "c13005",
+      "c13006"
+    ],
+    "tiers": [
+      {
+        "need": 2,
+        "desc": "2件套：攻击力+20%，每次攻击15%概率冲锋（伤害+50%）",
+        "fx": {
+          "dmg": 0.2
+        },
+        "buffDefs": [
+          {
+            "id": "warrior_dmg_2",
+            "source": "synergy",
+            "stat": "dmg",
+            "op": "multiply",
+            "value": 1.2,
+            "duration": -1,
+            "stackRule": "replace"
+          }
+        ]
+      },
+      {
+        "need": 4,
+        "desc": "4件套：攻击力+40%，冲锋概率+25%，破甲效果(-50护甲)可叠加3层",
+        "fx": {
+          "dmg": 0.4
+        },
+        "buffDefs": [
+          {
+            "id": "warrior_dmg_4",
+            "source": "synergy",
+            "stat": "dmg",
+            "op": "multiply",
+            "value": 1.4,
+            "duration": -1,
+            "stackRule": "replace"
+          }
+        ]
+      },
+      {
+        "need": 6,
+        "desc": "6件套：攻击力+70%，每15次攻击必定暴击，近战范围+30%",
+        "fx": {
+          "dmg": 0.7
+        },
+        "buffDefs": [
+          {
+            "id": "warrior_dmg_6",
+            "source": "synergy",
+            "stat": "dmg",
+            "op": "multiply",
+            "value": 1.7,
+            "duration": -1,
+            "stackRule": "replace"
+          }
+        ]
+      }
+    ]
+  }
+]

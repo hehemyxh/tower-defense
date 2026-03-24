@@ -1,0 +1,35 @@
+[
+  {
+    "id": "goblin",
+    "grade": "normal",
+    "name": "哥布林",
+    "ico": "👺",
+    "hp": 60,
+    "speed": 90,
+    "reward": 45,
+    "expReward": 55,
+    "color": "#27ae60",
+    "r": 10
+  },
+  {
+    "id": "wolf",
+    "grade": "normal",
+    "name": "恶狼",
+    "ico": "🐺",
+    "hp": 95,
+    "speed": 135,
+    "reward": 70,
+    "expReward": 85,
+    "color": "#7f8c8d",
+    "r": 10,
+    "skill": {
+      "id": "berserk",
+      "triggerInterval": 180,
+      "desc": "被攻击时有20%概率暴走，移速+40%持续2s",
+      "type": "berserk",
+      "chance": 0.2,
+      "v": 0.4,
+      "dur": 40
+    }
+  }
+]

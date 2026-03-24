@@ -1,0 +1,309 @@
+{
+  "synSkills": {
+    "arcane": {
+      "id": "syn_arcane",
+      "name": "魔法弹射",
+      "type": "onHit",
+      "trigger": { "chance": 0.18 },
+      "effect": {
+        "type": "bounce",
+        "bounceRange": 80,
+        "bounceCount": 1,
+        "dmgMult": 0.45,
+        "fx": "hit",
+        "fxColor": "#a29bfe"
+      }
+    },
+    "ranger": {
+      "id": "syn_ranger",
+      "name": "追踪标记",
+      "type": "onHit",
+      "trigger": { "always": true },
+      "effect": {
+        "type": "mark",
+        "markKey": "_marked",
+        "maxStacks": 3,
+        "dmgPerStack": 0.08,
+        "markDuration": 90
+      }
+    },
+    "warrior": {
+      "id": "syn_warrior",
+      "name": "破甲溅射",
+      "type": "onHit",
+      "trigger": { "always": true },
+      "effect": {
+        "type": "armorShredSplash",
+        "shredKey": "_armorShred",
+        "shredMax": 4,
+        "shredPct": 0.06,
+        "shredDuration": 40,
+        "splashRange": 60,
+        "splashCount": 2,
+        "splashDmgMult": 0.65,
+        "fx": "slash"
+      }
+    }
+  },
+  "charSkills": {
+    "c11001": {
+      "id": "sk_c11001",
+      "name": "魔法飞弹",
+      "type": "onHit",
+      "trigger": { "chance": 0.10 },
+      "effect": {
+        "type": "extraProjectile",
+        "dmgMult": 0.80,
+        "targetMode": "other",
+        "fx": "hit",
+        "fxColor": "#a29bfe",
+        "bulletColor": "#a29bfe",
+        "bulletSize": 3
+      }
+    },
+    "c11002": {
+      "id": "sk_c11002",
+      "name": "火球爆",
+      "type": "onSkillReady",
+      "effect": {
+        "type": "aoe",
+        "center": "target",
+        "radius": 60,
+        "dmgMult": 2.0,
+        "fx": "explode",
+        "fxColor": "#e17055"
+      }
+    },
+    "c11003": {
+      "id": "sk_c11003",
+      "name": "冰封",
+      "type": "onSkillReady",
+      "effect": {
+        "type": "freeze",
+        "center": "target",
+        "mainSlow": 0,
+        "mainSlowTick": 45,
+        "splashRadius": 50,
+        "splashSlow": 0.5,
+        "splashSlowMin": 0.3,
+        "splashSlowTick": 30,
+        "fx": "freeze",
+        "fxColor": "#74b9ff"
+      }
+    },
+    "c11004": {
+      "id": "sk_c11004",
+      "name": "雷霆",
+      "type": "onHit",
+      "trigger": { "chance": 0.20 },
+      "effect": {
+        "type": "chain",
+        "chainRange": 90,
+        "chainCount": 3,
+        "chainDmgMult": 0.50,
+        "fx": "hit",
+        "fxColor": "#fdcb6e",
+        "bulletColor": "#fdcb6e",
+        "bulletBtype": "chain_lightning",
+        "bulletSize": 3
+      }
+    },
+    "c11005": {
+      "id": "sk_c11005",
+      "name": "奥术共鸣",
+      "type": "onHit",
+      "trigger": { "always": true },
+      "effect": {
+        "type": "allyAura",
+        "auraRange": 120,
+        "buffKey": "_arcaneResonance",
+        "buffDmgMult": 0.10,
+        "buffDuration": 60,
+        "fx": "burst",
+        "fxColor": "#6c5ce7"
+      }
+    },
+    "c11006": {
+      "id": "sk_c11006",
+      "name": "魔法风暴",
+      "type": "onSkillReady",
+      "effect": {
+        "type": "aoeDot",
+        "center": "self",
+        "radius": 110,
+        "dotDmgRatio": 0.20,
+        "dotTick": 150,
+        "fx": "burst",
+        "fxColor": "#a29bfe"
+      }
+    },
+    "c12001": {
+      "id": "sk_c12001",
+      "name": "快射",
+      "type": "onHit",
+      "trigger": { "everyN": 5 },
+      "effect": {
+        "type": "multiShot",
+        "shotCount": 3,
+        "dmgMult": 0.60,
+        "fx": "hit",
+        "fxColor": "#fd79a8",
+        "bulletColor": "#fd79a8",
+        "bulletSize": 3
+      }
+    },
+    "c12002": {
+      "id": "sk_c12002",
+      "name": "穿透弩矢",
+      "type": "onHit",
+      "trigger": { "always": true },
+      "effect": {
+        "type": "pierce",
+        "pierceExtend": 30,
+        "pierceDmgMult": 0.70,
+        "pierceWidth": 20,
+        "fx": "hit",
+        "fxColor": "#b2bec3",
+        "bulletColor": "#b2bec3",
+        "bulletSize": 3
+      }
+    },
+    "c12003": {
+      "id": "sk_c12003",
+      "name": "追踪",
+      "type": "onHit",
+      "trigger": { "always": true },
+      "effect": {
+        "type": "bonusDmg",
+        "dmgMult": 0.15,
+        "fx": "hit",
+        "fxColor": "#f39c12",
+        "fxRadius": 12
+      }
+    },
+    "c12004": {
+      "id": "sk_c12004",
+      "name": "自然之箭",
+      "type": "onHit",
+      "trigger": { "chance": 0.20 },
+      "effect": {
+        "type": "slow",
+        "slowMult": 0.70,
+        "slowMin": 0.35,
+        "slowTick": 60,
+        "fx": "freeze",
+        "fxColor": "#27ae60"
+      }
+    },
+    "c12005": {
+      "id": "sk_c12005",
+      "name": "神射",
+      "type": "onHit",
+      "trigger": { "chance": 0.35 },
+      "effect": {
+        "type": "bonusDmg",
+        "dmgMult": 1.0,
+        "fx": "burst",
+        "fxColor": "#ffd700",
+        "fxRadius": 20
+      }
+    },
+    "c12006": {
+      "id": "sk_c12006",
+      "name": "鹰眼狙击",
+      "type": "onHit",
+      "trigger": { "always": true },
+      "effect": {
+        "type": "bonusDmg",
+        "dmgMult": 0.30,
+        "fx": "burst",
+        "fxColor": "#e17055",
+        "fxRadius": 15
+      }
+    },
+    "c13001": {
+      "id": "sk_c13001",
+      "name": "猛击",
+      "type": "onHit",
+      "trigger": { "chance": 0.15 },
+      "effect": {
+        "type": "bonusDmg",
+        "dmgMult": 0.50,
+        "fx": "burst",
+        "fxColor": "#b2bec3",
+        "fxRadius": 25,
+        "fx2": "slash"
+      }
+    },
+    "c13002": {
+      "id": "sk_c13002",
+      "name": "连斩",
+      "type": "onHit",
+      "trigger": { "always": true },
+      "effect": {
+        "type": "comboStack",
+        "stackKey": "_comboStack",
+        "targetKey": "_lastTarget",
+        "maxStacks": 3,
+        "dmgPerStack": 0.10
+      }
+    },
+    "c13003": {
+      "id": "sk_c13003",
+      "name": "破甲斧",
+      "type": "onHit",
+      "trigger": { "always": true },
+      "effect": {
+        "type": "debuffStack",
+        "stackKey": "_axeShred",
+        "maxStacks": 2,
+        "tickKey": "_axeShredTick",
+        "tickDuration": 90,
+        "dmgPerStack": 0.08
+      }
+    },
+    "c13004": {
+      "id": "sk_c13004",
+      "name": "狂暴",
+      "type": "onHit",
+      "trigger": { "everyN": 5 },
+      "effect": {
+        "type": "selfBuff",
+        "stackKey": "_rageStack",
+        "maxStacks": 5,
+        "dmgPerStack": 0.06,
+        "cdReductionPerStack": 0.10
+      }
+    },
+    "c13005": {
+      "id": "sk_c13005",
+      "name": "剑意",
+      "type": "onHit",
+      "trigger": { "chance": 0.20 },
+      "effect": {
+        "type": "extraAttack",
+        "searchRange": 60,
+        "dmgMult": 0.80,
+        "fx": "slash",
+        "fxColor": "#ffd700",
+        "bulletColor": "#ffd700",
+        "bulletBtype": "slash",
+        "bulletSize": 3
+      }
+    },
+    "c13006": {
+      "id": "sk_c13006",
+      "name": "连击风暴",
+      "type": "onHit",
+      "trigger": { "everyN": 3 },
+      "effect": {
+        "type": "aoe",
+        "center": "self",
+        "radius": 90,
+        "dmgMult": 0.40,
+        "fx": "burst",
+        "fxColor": "#2d3436"
+      }
+    }
+  }
+}

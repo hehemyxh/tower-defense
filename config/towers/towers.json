@@ -1,0 +1,192 @@
+[
+  {
+    "id": "tower_archer",
+    "name": "弓手",
+    "desc": "普通远程单体攻击，价格低廉",
+    "type": "single",
+    "color": "#5c8a3c",
+    "icon": "🏹",
+    "cost": 50,
+    "stats": {
+      "damage": 20,
+      "range": 160,
+      "attackSpeed": 1.2,
+      "projectileSpeed": 300,
+      "armor": 0
+    },
+    "targetPriority": "first",
+    "upgrades": ["tower_archer_2", "tower_archer_3"]
+  },
+  {
+    "id": "tower_archer_2",
+    "name": "精锐弓手",
+    "desc": "伤害和射程提升",
+    "type": "single",
+    "color": "#4a7a2e",
+    "icon": "🎯",
+    "cost": 80,
+    "stats": {
+      "damage": 36,
+      "range": 190,
+      "attackSpeed": 1.4,
+      "projectileSpeed": 360,
+      "armor": 0
+    },
+    "targetPriority": "first",
+    "upgrades": ["tower_archer_3"]
+  },
+  {
+    "id": "tower_archer_3",
+    "name": "神射手",
+    "desc": "高伤害，极远射程",
+    "type": "single",
+    "color": "#2e5c1e",
+    "icon": "⭐",
+    "cost": 140,
+    "stats": {
+      "damage": 65,
+      "range": 240,
+      "attackSpeed": 1.6,
+      "projectileSpeed": 450,
+      "armor": 0
+    },
+    "targetPriority": "first",
+    "upgrades": []
+  },
+  {
+    "id": "tower_mage",
+    "name": "法师塔",
+    "desc": "攻击穿甲，可附带减速",
+    "type": "single",
+    "color": "#4a3c8a",
+    "icon": "🔮",
+    "cost": 100,
+    "stats": {
+      "damage": 35,
+      "range": 140,
+      "attackSpeed": 0.8,
+      "projectileSpeed": 250,
+      "armor": 0,
+      "armorPierce": 5
+    },
+    "onHitEffects": ["slow"],
+    "targetPriority": "first",
+    "upgrades": ["tower_mage_2"]
+  },
+  {
+    "id": "tower_mage_2",
+    "name": "大法师塔",
+    "desc": "高穿甲，攻击释放冰封",
+    "type": "single",
+    "color": "#2e1e6a",
+    "icon": "✨",
+    "cost": 160,
+    "stats": {
+      "damage": 60,
+      "range": 170,
+      "attackSpeed": 0.9,
+      "projectileSpeed": 300,
+      "armor": 0,
+      "armorPierce": 12
+    },
+    "onHitEffects": ["freeze"],
+    "targetPriority": "first",
+    "upgrades": []
+  },
+  {
+    "id": "tower_cannon",
+    "name": "炮台",
+    "desc": "范围爆炸伤害，对群体有效",
+    "type": "aoe",
+    "color": "#8a5c3c",
+    "icon": "💣",
+    "cost": 130,
+    "stats": {
+      "damage": 50,
+      "range": 130,
+      "attackSpeed": 0.5,
+      "projectileSpeed": 200,
+      "armor": 0,
+      "aoeRadius": 80
+    },
+    "targetPriority": "cluster",
+    "upgrades": ["tower_cannon_2"]
+  },
+  {
+    "id": "tower_cannon_2",
+    "name": "重炮台",
+    "desc": "强力爆炸，燃烧附加效果",
+    "type": "aoe",
+    "color": "#6a3c1e",
+    "icon": "🔥",
+    "cost": 200,
+    "stats": {
+      "damage": 90,
+      "range": 150,
+      "attackSpeed": 0.55,
+      "projectileSpeed": 220,
+      "armor": 0,
+      "aoeRadius": 100
+    },
+    "onHitEffects": ["burn"],
+    "targetPriority": "cluster",
+    "upgrades": []
+  },
+  {
+    "id": "tower_poison",
+    "name": "毒液塔",
+    "desc": "持续毒化，低造价高效益",
+    "type": "single",
+    "color": "#3c6a2e",
+    "icon": "☠️",
+    "cost": 75,
+    "stats": {
+      "damage": 5,
+      "range": 145,
+      "attackSpeed": 1.5,
+      "projectileSpeed": 220,
+      "armor": 0
+    },
+    "onHitEffects": ["poison"],
+    "targetPriority": "first",
+    "upgrades": ["tower_poison_2"]
+  },
+  {
+    "id": "tower_poison_2",
+    "name": "剧毒塔",
+    "desc": "极强毒化效果，死亡时爆发孢子",
+    "type": "single",
+    "color": "#1e4a1a",
+    "icon": "🍄",
+    "cost": 120,
+    "stats": {
+      "damage": 8,
+      "range": 165,
+      "attackSpeed": 1.6,
+      "projectileSpeed": 250,
+      "armor": 0
+    },
+    "onHitEffects": ["poison", "spore"],
+    "targetPriority": "first",
+    "upgrades": []
+  },
+  {
+    "id": "tower_thunder",
+    "name": "雷电塔",
+    "desc": "连锁闪电攻击多个敌人",
+    "type": "chain",
+    "color": "#8a7a1e",
+    "icon": "⚡",
+    "cost": 180,
+    "stats": {
+      "damage": 40,
+      "range": 150,
+      "attackSpeed": 0.7,
+      "projectileSpeed": 999,
+      "armor": 0
+    },
+    "onHitEffects": ["chain_lightning"],
+    "targetPriority": "first",
+    "upgrades": []
+  }
+]

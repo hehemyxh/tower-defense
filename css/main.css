@@ -1,0 +1,82 @@
+/* ===== 全局基础样式 ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-border: #30363d;
+  --color-primary: #f0c040;
+  --color-primary-hover: #ffd560;
+  --color-danger: #f85149;
+  --color-text: #e6edf3;
+  --color-text-muted: #8b949e;
+  --color-white-1: #ffffff11;
+  --rarity-common: #adb5bd;
+  --rarity-rare: #4dabf7;
+  --rarity-epic: #cc5de8;
+  --rarity-legend: #ffd43b;
+  --rarity-myth: #ff6b6b;
+}
+
+html, body {
+  width: 100%; height: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ===== 界面切换 ===== */
+.screen { display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0; }
+.screen.active { display: flex; align-items: center; justify-content: center; }
+
+/* ===== 加载界面 ===== */
+.loading-container {
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+}
+.loading-bar-wrap {
+  width: 400px; height: 8px;
+  background: var(--color-border);
+  border-radius: 4px; overflow: hidden;
+}
+.loading-bar {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+.loading-text { color: var(--color-text-muted); font-size: 14px; }
+
+/* ===== 通用按钮 ===== */
+.btn {
+  padding: 10px 24px;
+  border: none; border-radius: 6px;
+  font-size: 15px; font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+.btn:active { transform: scale(0.97); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btn-primary { background: var(--color-primary); color: #1a1000; }
+.btn-primary:hover:not(:disabled) { background: var(--color-primary-hover); }
+
+.btn-secondary { background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-border); }
+.btn-secondary:hover:not(:disabled) { background: #21262d; }
+
+.btn-danger { background: var(--color-danger); color: #fff; }
+.btn-danger:hover:not(:disabled) { background: #ff7b72; }
+
+.btn-small { padding: 5px 12px; font-size: 12px; }
+
+/* ===== 通用工具 ===== */
+.hidden { display: none !important; }
+
+.game-title {
+  font-size: 36px;
+  color: var(--color-primary);
+  text-shadow: 0 0 20px rgba(240,192,64,0.5);
+  letter-spacing: 2px;
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "skill_slow_field",
+    "name": "寒气阵",
+    "desc": "持续对范围内敌人施加减速",
+    "type": "aura",
+    "effectId": "slow",
+    "params": { "radius": 120 },
+    "cost": 80,
+    "icon": "🌀"
+  },
+  {
+    "id": "skill_fire_arrow",
+    "name": "火矢诀",
+    "desc": "攻击附带灼烧效果",
+    "type": "on_hit",
+    "effectId": "burn",
+    "params": { "chance": 0.4 },
+    "cost": 60,
+    "icon": "🏹"
+  },
+  {
+    "id": "skill_poison_cloud",
+    "name": "毒雾阵",
+    "desc": "定期释放毒雾区域",
+    "type": "periodic_aoe",
+    "effectId": "poison",
+    "params": { "radius": 100, "interval": 3.0 },
+    "cost": 100,
+    "icon": "💨"
+  },
+  {
+    "id": "skill_thunder_chain",
+    "name": "雷霆连锁",
+    "desc": "攻击时触发连锁闪电",
+    "type": "on_hit",
+    "effectId": "chain_lightning",
+    "params": { "chance": 0.3 },
+    "cost": 120,
+    "icon": "⚡"
+  },
+  {
+    "id": "skill_freeze_field",
+    "name": "冰封阵",
+    "desc": "对范围内敌人施加冰封",
+    "type": "periodic_aoe",
+    "effectId": "freeze",
+    "params": { "radius": 90, "interval": 5.0 },
+    "cost": 150,
+    "icon": "❄️"
+  },
+  {
+    "id": "skill_amplify_mark",
+    "name": "易伤符",
+    "desc": "攻击附带易伤标记",
+    "type": "on_hit",
+    "effectId": "amplify",
+    "params": { "chance": 0.5 },
+    "cost": 90,
+    "icon": "📍"
+  },
+  {
+    "id": "skill_rapid_shot",
+    "name": "速射诀",
+    "desc": "大幅提升攻击速度",
+    "type": "self_buff",
+    "effectId": null,
+    "params": { "attackSpeedMult": 1.5 },
+    "cost": 110,
+    "icon": "💨"
+  },
+  {
+    "id": "skill_piercing",
+    "name": "穿心决",
+    "desc": "攻击可以穿透多个敌人",
+    "type": "projectile_mod",
+    "effectId": null,
+    "params": { "pierceCount": 3 },
+    "cost": 130,
+    "icon": "🗡️"
+  }
+]

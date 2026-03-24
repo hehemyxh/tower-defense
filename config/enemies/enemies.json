@@ -1,0 +1,95 @@
+[
+  {
+    "id": "enemy_grunt",
+    "name": "小鬼",
+    "desc": "最基础的敌人",
+    "color": "#c0392b",
+    "icon": "👺",
+    "stats": { "hp": 80, "speed": 80, "armor": 0, "reward": 10, "size": 14 },
+    "immunities": []
+  },
+  {
+    "id": "enemy_soldier",
+    "name": "妖兵",
+    "desc": "普通移速，有一定护甲",
+    "color": "#922b21",
+    "icon": "⚔️",
+    "stats": { "hp": 200, "speed": 65, "armor": 3, "reward": 20, "size": 16 },
+    "immunities": []
+  },
+  {
+    "id": "enemy_speeder",
+    "name": "疾风鬼",
+    "desc": "移速极快，血量较少",
+    "color": "#f39c12",
+    "icon": "💨",
+    "stats": { "hp": 120, "speed": 160, "armor": 0, "reward": 15, "size": 12 },
+    "immunities": ["slow"]
+  },
+  {
+    "id": "enemy_tank",
+    "name": "铁甲妖",
+    "desc": "高血量高护甲，移速缓慢",
+    "color": "#5d6d7e",
+    "icon": "🛡️",
+    "stats": { "hp": 600, "speed": 40, "armor": 10, "reward": 50, "size": 22 },
+    "immunities": []
+  },
+  {
+    "id": "enemy_ghost",
+    "name": "幽魂",
+    "desc": "无实体，免疫物理和中毒伤害",
+    "color": "#d7bde2",
+    "icon": "👻",
+    "stats": { "hp": 180, "speed": 90, "armor": 0, "reward": 30, "size": 14 },
+    "immunities": ["poison", "physical"]
+  },
+  {
+    "id": "enemy_shaman",
+    "name": "妖祭司",
+    "desc": "会为附近敌人施加护盾",
+    "color": "#8e44ad",
+    "icon": "🧙",
+    "stats": { "hp": 300, "speed": 55, "armor": 2, "reward": 40, "size": 17 },
+    "immunities": [],
+    "abilities": [{ "type": "aura_shield", "radius": 100, "shieldHp": 50 }]
+  },
+  {
+    "id": "enemy_elite",
+    "name": "精英妖将",
+    "desc": "高血量，各属性均衡",
+    "color": "#c0392b",
+    "icon": "👹",
+    "stats": { "hp": 1200, "speed": 55, "armor": 8, "reward": 100, "size": 24 },
+    "immunities": []
+  },
+  {
+    "id": "enemy_boss_ox",
+    "name": "牛魔王",
+    "desc": "第一关BOSS，冲击波AOE",
+    "color": "#922b21",
+    "icon": "🐂",
+    "stats": { "hp": 5000, "speed": 35, "armor": 15, "reward": 300, "size": 36 },
+    "immunities": ["freeze"],
+    "abilities": [{ "type": "shockwave", "radius": 120, "interval": 5.0 }]
+  },
+  {
+    "id": "enemy_split",
+    "name": "分裂虫",
+    "desc": "死亡后分裂为两只小分裂虫",
+    "color": "#27ae60",
+    "icon": "🐛",
+    "stats": { "hp": 240, "speed": 70, "armor": 0, "reward": 25, "size": 18 },
+    "immunities": [],
+    "onDeath": { "type": "split", "childId": "enemy_split_small", "count": 2 }
+  },
+  {
+    "id": "enemy_split_small",
+    "name": "小分裂虫",
+    "desc": "分裂虫死亡后产生",
+    "color": "#1e8449",
+    "icon": "🪲",
+    "stats": { "hp": 80, "speed": 90, "armor": 0, "reward": 5, "size": 10 },
+    "immunities": []
+  }
+]

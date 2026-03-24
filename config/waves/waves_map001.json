@@ -1,0 +1,76 @@
+{
+  "mapId": "map_001",
+  "waves": [
+    {
+      "wave": 1,
+      "groups": [
+        { "enemyId": "enemy_grunt", "count": 8, "interval": 1.2, "delay": 0 }
+      ]
+    },
+    {
+      "wave": 2,
+      "groups": [
+        { "enemyId": "enemy_grunt", "count": 6, "interval": 1.0, "delay": 0 },
+        { "enemyId": "enemy_soldier", "count": 2, "interval": 2.0, "delay": 4.0 }
+      ]
+    },
+    {
+      "wave": 3,
+      "groups": [
+        { "enemyId": "enemy_speeder", "count": 5, "interval": 0.6, "delay": 0 },
+        { "enemyId": "enemy_grunt", "count": 5, "interval": 1.0, "delay": 2.0 }
+      ]
+    },
+    {
+      "wave": 4,
+      "groups": [
+        { "enemyId": "enemy_soldier", "count": 6, "interval": 1.5, "delay": 0 },
+        { "enemyId": "enemy_speeder", "count": 4, "interval": 0.8, "delay": 5.0 }
+      ]
+    },
+    {
+      "wave": 5,
+      "groups": [
+        { "enemyId": "enemy_tank", "count": 2, "interval": 4.0, "delay": 0 },
+        { "enemyId": "enemy_grunt", "count": 10, "interval": 0.8, "delay": 1.0 }
+      ]
+    },
+    {
+      "wave": 6,
+      "groups": [
+        { "enemyId": "enemy_ghost", "count": 6, "interval": 1.2, "delay": 0 },
+        { "enemyId": "enemy_soldier", "count": 4, "interval": 1.5, "delay": 3.0 }
+      ]
+    },
+    {
+      "wave": 7,
+      "groups": [
+        { "enemyId": "enemy_shaman", "count": 2, "interval": 5.0, "delay": 0 },
+        { "enemyId": "enemy_soldier", "count": 8, "interval": 1.0, "delay": 2.0 }
+      ]
+    },
+    {
+      "wave": 8,
+      "groups": [
+        { "enemyId": "enemy_split", "count": 4, "interval": 2.5, "delay": 0 },
+        { "enemyId": "enemy_speeder", "count": 6, "interval": 0.7, "delay": 5.0 }
+      ]
+    },
+    {
+      "wave": 9,
+      "groups": [
+        { "enemyId": "enemy_elite", "count": 2, "interval": 5.0, "delay": 0 },
+        { "enemyId": "enemy_tank", "count": 2, "interval": 4.0, "delay": 3.0 },
+        { "enemyId": "enemy_ghost", "count": 4, "interval": 1.5, "delay": 6.0 }
+      ]
+    },
+    {
+      "wave": 10,
+      "isBossWave": true,
+      "groups": [
+        { "enemyId": "enemy_boss_ox", "count": 1, "interval": 0, "delay": 0 },
+        { "enemyId": "enemy_soldier", "count": 12, "interval": 0.8, "delay": 3.0 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,524 @@
+[
+  {
+    "id": "c11001",
+    "name": "学徒法师",
+    "emoji": "📖",
+    "rarity": "n",
+    "syns": [
+      "arcane"
+    ],
+    "dmg": 35,
+    "range": 125,
+    "rate": 0.9,
+    "hp": 0,
+    "skill": {
+      "name": "魔法飞弹",
+      "icon": "📖",
+      "type": "被动",
+      "desc": "攻击时10%概率额外发射魔法飞弹（80%伤害）"
+    },
+    "desc": "基础法师型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "魔法弹射",
+      "icon": "✨",
+      "type": "被动",
+      "desc": "攻击时18%概率弹射到附近1个敌人（45%伤害）"
+    }
+  },
+  {
+    "id": "c11002",
+    "name": "火法师",
+    "emoji": "🔥",
+    "rarity": "n",
+    "syns": [
+      "arcane"
+    ],
+    "dmg": 55,
+    "range": 135,
+    "rate": 0.75,
+    "hp": 0,
+    "skill": {
+      "name": "火球爆",
+      "icon": "🔥",
+      "type": "主动",
+      "desc": "蓝满释放，范围60px造成200%伤害"
+    },
+    "desc": "火系法师型",
+    "lore": "",
+    "maxMana": 80,
+    "manaGain": 18,
+    "synSkill": {
+      "name": "魔法弹射",
+      "icon": "✨",
+      "type": "被动",
+      "desc": "攻击时18%概率弹射到附近1个敌人（45%伤害）"
+    }
+  },
+  {
+    "id": "c11003",
+    "name": "冰法师",
+    "emoji": "❄️",
+    "rarity": "n",
+    "syns": [
+      "arcane"
+    ],
+    "dmg": 50,
+    "range": 130,
+    "rate": 0.8,
+    "hp": 0,
+    "skill": {
+      "name": "冰封",
+      "icon": "❄️",
+      "type": "主动",
+      "desc": "蓝满释放，冰封目标1.5秒使其无法移动"
+    },
+    "desc": "冰系法师型",
+    "lore": "",
+    "maxMana": 80,
+    "manaGain": 18,
+    "synSkill": {
+      "name": "魔法弹射",
+      "icon": "✨",
+      "type": "被动",
+      "desc": "攻击时18%概率弹射到附近1个敌人（45%伤害）"
+    }
+  },
+  {
+    "id": "c11004",
+    "name": "雷法师",
+    "emoji": "⚡",
+    "rarity": "n",
+    "syns": [
+      "arcane"
+    ],
+    "dmg": 60,
+    "range": 140,
+    "rate": 0.7,
+    "hp": 0,
+    "skill": {
+      "name": "雷霆",
+      "icon": "⚡",
+      "type": "被动",
+      "desc": "攻击时20%概率闪电链，最多跳跃3个目标"
+    },
+    "desc": "雷系法师型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "魔法弹射",
+      "icon": "✨",
+      "type": "被动",
+      "desc": "攻击时18%概率弹射到附近1个敌人（45%伤害）"
+    }
+  },
+  {
+    "id": "c11005",
+    "name": "奥术师",
+    "emoji": "🔮",
+    "rarity": "n",
+    "syns": [
+      "arcane"
+    ],
+    "dmg": 65,
+    "range": 138,
+    "rate": 0.75,
+    "hp": 0,
+    "skill": {
+      "name": "奥术共鸣",
+      "icon": "🔮",
+      "type": "被动",
+      "desc": "每次攻击使120范围内友方塔伤害+10%%持续2秒"
+    },
+    "desc": "奥术光环型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "魔法弹射",
+      "icon": "✨",
+      "type": "被动",
+      "desc": "攻击时18%概率弹射到附近1个敌人（45%伤害）"
+    }
+  },
+  {
+    "id": "c11006",
+    "name": "大法师",
+    "emoji": "🌟",
+    "rarity": "n",
+    "syns": [
+      "arcane"
+    ],
+    "dmg": 80,
+    "range": 150,
+    "rate": 0.7,
+    "hp": 0,
+    "skill": {
+      "name": "魔法风暴",
+      "icon": "🌟",
+      "type": "主动",
+      "desc": "蓝满释放，范围造成100%伤害/秒持续5秒"
+    },
+    "desc": "大法师型",
+    "lore": "",
+    "maxMana": 80,
+    "manaGain": 18,
+    "synSkill": {
+      "name": "魔法弹射",
+      "icon": "✨",
+      "type": "被动",
+      "desc": "攻击时18%概率弹射到附近1个敌人（45%伤害）"
+    }
+  },
+  {
+    "id": "c12001",
+    "name": "弓箭手",
+    "emoji": "🏹",
+    "rarity": "n",
+    "syns": [
+      "ranger"
+    ],
+    "dmg": 40,
+    "range": 140,
+    "rate": 1.1,
+    "hp": 0,
+    "skill": {
+      "name": "快射",
+      "icon": "🏹",
+      "type": "被动",
+      "desc": "每5次攻击发射3连射，各造成60%伤害"
+    },
+    "desc": "基础弓箭型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "追踪标记",
+      "icon": "🎯",
+      "type": "被动",
+      "desc": "攻击叠加追踪标记（每层+8%伤害，最多3层）"
+    }
+  },
+  {
+    "id": "c12002",
+    "name": "弩手",
+    "emoji": "🎯",
+    "rarity": "n",
+    "syns": [
+      "ranger"
+    ],
+    "dmg": 50,
+    "range": 135,
+    "rate": 0.9,
+    "hp": 0,
+    "skill": {
+      "name": "穿透弩矢",
+      "icon": "🎯",
+      "type": "被动",
+      "desc": "攻击穿透第一个目标，对后方目标造成70%伤害"
+    },
+    "desc": "机械远程型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "追踪标记",
+      "icon": "🎯",
+      "type": "被动",
+      "desc": "攻击叠加追踪标记（每层+8%伤害，最多3层）"
+    }
+  },
+  {
+    "id": "c12003",
+    "name": "猎人",
+    "emoji": "🦊",
+    "rarity": "n",
+    "syns": [
+      "ranger"
+    ],
+    "dmg": 45,
+    "range": 145,
+    "rate": 1,
+    "hp": 0,
+    "skill": {
+      "name": "追踪",
+      "icon": "🦊",
+      "type": "被动",
+      "desc": "攻击目标被追踪，受到伤害+15%持续5秒"
+    },
+    "desc": "自然猎人型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "追踪标记",
+      "icon": "🎯",
+      "type": "被动",
+      "desc": "攻击叠加追踪标记（每层+8%伤害，最多3层）"
+    }
+  },
+  {
+    "id": "c12004",
+    "name": "游侠",
+    "emoji": "🌲",
+    "rarity": "n",
+    "syns": [
+      "ranger"
+    ],
+    "dmg": 48,
+    "range": 148,
+    "rate": 0.95,
+    "hp": 0,
+    "skill": {
+      "name": "自然之箭",
+      "icon": "🌲",
+      "type": "被动",
+      "desc": "攻击时20%概率发射自然之箭，减速目标30%持续2秒"
+    },
+    "desc": "自然游侠型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "追踪标记",
+      "icon": "🎯",
+      "type": "被动",
+      "desc": "攻击叠加追踪标记（每层+8%伤害，最多3层）"
+    }
+  },
+  {
+    "id": "c12005",
+    "name": "神射手",
+    "emoji": "⭐",
+    "rarity": "n",
+    "syns": [
+      "ranger"
+    ],
+    "dmg": 60,
+    "range": 158,
+    "rate": 0.9,
+    "hp": 0,
+    "skill": {
+      "name": "神射",
+      "icon": "⭐",
+      "type": "被动",
+      "desc": "攻击时35%概率暴击（200%伤害），射程+10%"
+    },
+    "desc": "神射暴击型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "追踪标记",
+      "icon": "🎯",
+      "type": "被动",
+      "desc": "攻击叠加追踪标记（每层+8%伤害，最多3层）"
+    }
+  },
+  {
+    "id": "c12006",
+    "name": "鹰眼",
+    "emoji": "🦅",
+    "rarity": "n",
+    "syns": [
+      "ranger"
+    ],
+    "dmg": 65,
+    "range": 165,
+    "rate": 0.85,
+    "hp": 0,
+    "skill": {
+      "name": "鹰眼狙击",
+      "icon": "🦅",
+      "type": "被动",
+      "desc": "射程最大化，攻击最远目标时伤害+30%"
+    },
+    "desc": "远程暴击型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "追踪标记",
+      "icon": "🎯",
+      "type": "被动",
+      "desc": "攻击叠加追踪标记（每层+8%伤害，最多3层）"
+    }
+  },
+  {
+    "id": "c13001",
+    "name": "步兵",
+    "emoji": "⚔️",
+    "rarity": "n",
+    "syns": [
+      "warrior"
+    ],
+    "dmg": 35,
+    "range": 85,
+    "rate": 1.1,
+    "hp": 0,
+    "skill": {
+      "name": "猛击",
+      "icon": "⚔️",
+      "type": "被动",
+      "desc": "攻击时15%%概率猛击，伤害+50%%"
+    },
+    "desc": "基础步兵型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "破甲溅射",
+      "icon": "⚔️",
+      "type": "被动",
+      "desc": "攻击附带破甲（每层+6%，最多4层），并溅射周围2个敌人（65%伤害）"
+    }
+  },
+  {
+    "id": "c13002",
+    "name": "剑士",
+    "emoji": "🗡️",
+    "rarity": "n",
+    "syns": [
+      "warrior"
+    ],
+    "dmg": 40,
+    "range": 88,
+    "rate": 1.2,
+    "hp": 0,
+    "skill": {
+      "name": "连斩",
+      "icon": "🗡️",
+      "type": "被动",
+      "desc": "连续攻击同一目标，每次伤害+10%，最多3层"
+    },
+    "desc": "速剑型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "破甲溅射",
+      "icon": "⚔️",
+      "type": "被动",
+      "desc": "攻击附带破甲（每层+6%，最多4层），并溅射周围2个敌人（65%伤害）"
+    }
+  },
+  {
+    "id": "c13003",
+    "name": "斧战士",
+    "emoji": "🪓",
+    "rarity": "n",
+    "syns": [
+      "warrior"
+    ],
+    "dmg": 50,
+    "range": 90,
+    "rate": 0.9,
+    "hp": 0,
+    "skill": {
+      "name": "破甲斧",
+      "icon": "🪓",
+      "type": "被动",
+      "desc": "攻击使目标护甲-50，持续3秒，可叠加2次"
+    },
+    "desc": "斧头型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "破甲溅射",
+      "icon": "⚔️",
+      "type": "被动",
+      "desc": "攻击附带破甲（每层+6%，最多4层），并溅射周围2个敌人（65%伤害）"
+    }
+  },
+  {
+    "id": "c13004",
+    "name": "狂战士",
+    "emoji": "😡",
+    "rarity": "n",
+    "syns": [
+      "warrior"
+    ],
+    "dmg": 60,
+    "range": 88,
+    "rate": 1,
+    "hp": 0,
+    "skill": {
+      "name": "狂暴",
+      "icon": "😡",
+      "type": "被动",
+      "desc": "每攻击5次获得一层狂暴（攻速+10%%伤害+6%%），最多5层"
+    },
+    "desc": "狂暴型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "破甲溅射",
+      "icon": "⚔️",
+      "type": "被动",
+      "desc": "攻击附带破甲（每层+6%，最多4层），并溅射周围2个敌人（65%伤害）"
+    }
+  },
+  {
+    "id": "c13005",
+    "name": "剑术大师",
+    "emoji": "⚔️",
+    "rarity": "n",
+    "syns": [
+      "warrior"
+    ],
+    "dmg": 65,
+    "range": 92,
+    "rate": 1.1,
+    "hp": 0,
+    "skill": {
+      "name": "剑意",
+      "icon": "⚔️",
+      "type": "被动",
+      "desc": "攻击后20%概率发动剑意，额外攻击相邻目标"
+    },
+    "desc": "剑术型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "破甲溅射",
+      "icon": "⚔️",
+      "type": "被动",
+      "desc": "攻击附带破甲（每层+6%，最多4层），并溅射周围2个敌人（65%伤害）"
+    }
+  },
+  {
+    "id": "c13006",
+    "name": "战斗大师",
+    "emoji": "🥊",
+    "rarity": "n",
+    "syns": [
+      "warrior"
+    ],
+    "dmg": 70,
+    "range": 90,
+    "rate": 1,
+    "hp": 0,
+    "skill": {
+      "name": "连击风暴",
+      "icon": "🥊",
+      "type": "被动",
+      "desc": "每3次攻击对周围90范围内所有敌人造成40%%伤害"
+    },
+    "desc": "搏斗型",
+    "lore": "",
+    "maxMana": 0,
+    "manaGain": 0,
+    "synSkill": {
+      "name": "破甲溅射",
+      "icon": "⚔️",
+      "type": "被动",
+      "desc": "攻击附带破甲（每层+6%，最多4层），并溅射周围2个敌人（65%伤害）"
+    }
+  }
+]

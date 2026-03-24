@@ -1,0 +1,97 @@
+{
+  "pieces": {
+    "dragon_sword": {
+      "name": "龙牙剑",
+      "icon": "🗡️",
+      "quality": "rare",
+      "set": "dragon",
+      "stat": {
+        "dmg": 0.12
+      },
+      "price": 80,
+      "desc": "攻击+12%"
+    },
+    "dragon_scale": {
+      "name": "龙鳞甲",
+      "icon": "🦎",
+      "quality": "epic",
+      "set": "dragon",
+      "stat": {
+        "dmg": 0.15,
+        "rng": 0.08
+      },
+      "price": 120,
+      "desc": "攻击+15% 射程+8%"
+    },
+    "dragon_wings": {
+      "name": "龙翼弓",
+      "icon": "🏹",
+      "quality": "epic",
+      "set": "dragon",
+      "stat": {
+        "rng": 0.15,
+        "spd": 0.08
+      },
+      "price": 130,
+      "desc": "射程+15% 攻速+8%"
+    },
+    "dragon_crown": {
+      "name": "龙魂冠",
+      "icon": "👑",
+      "quality": "legendary",
+      "set": "dragon",
+      "stat": {
+        "dmg": 0.2,
+        "rng": 0.12
+      },
+      "price": 180,
+      "desc": "攻击+20% 射程+12%"
+    },
+    "eagle_eye": {
+      "name": "鹰眼单镜",
+      "icon": "🦅",
+      "quality": "rare",
+      "set": null,
+      "stat": {
+        "rng": 0.2
+      },
+      "price": 95,
+      "desc": "射程+20%"
+    },
+    "war_drum": {
+      "name": "战鼓",
+      "icon": "🥁",
+      "quality": "rare",
+      "set": null,
+      "stat": {
+        "spd": 0.18
+      },
+      "price": 90,
+      "desc": "攻速+18%"
+    }
+  },
+  "sets": {
+    "dragon": {
+      "name": "龙魂",
+      "icon": "🐉",
+      "color": "#ff7043",
+      "bonuses": [
+        {
+          "need": 2,
+          "bonus": {
+            "dmg": 0.2
+          },
+          "desc": "2件：全局攻击+20%"
+        },
+        {
+          "need": 4,
+          "bonus": {
+            "dmg": 0.5,
+            "rng": 0.15
+          },
+          "desc": "4件：全局攻击+50% 射程+15%"
+        }
+      ]
+    }
+  }
+}
