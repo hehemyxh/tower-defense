@@ -11880,26 +11880,80 @@ document.addEventListener('touchend',e=>{
   if(now-_lastTap<300) e.preventDefault();
   _lastTap=now;
 },{passive:false});
-// ── 强制横屏提示 ──
-function _checkOrientation(){
-  const w=window.innerWidth, h=window.innerHeight;
-  let hint=document.getElementById('rotate-hint');
-  if(w<h && w<768){
-    if(!hint){
-      hint=document.createElement('div');
-      hint.id='rotate-hint';
-      hint.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.92);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-size:18px;gap:16px;';
-      hint.innerHTML='<div style="font-size:48px">📱↔️</div><div>请横屏使用以获得最佳体验</div>';
-      document.body.appendChild(hint);
+// ── 移动端横屏引导（仅首次弹出，支持自动锁定横屏）──
+(function(){
+  // 仅移动端触发
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if(!isMobile) return;
+
+  // 已选择过则跳过
+  if(localStorage.getItem('td_orient_choice')) return;
+
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  // 创建弹窗
+  const overlay = document.createElement('div');
+  overlay.id = 'orient-modal';
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.88);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-family:Arial,sans-serif;padding:24px;text-align:center;';
+
+  overlay.innerHTML = `
+    <div style="font-size:52px;margin-bottom:12px;">🎮</div>
+    <div style="font-size:18px;font-weight:700;margin-bottom:6px;">横屏体验更佳</div>
+    <div style="font-size:13px;color:#aaa;margin-bottom:20px;line-height:1.5;">
+      ${isIOS
+        ? '建议开启手机 <b style="color:#7dc8ff">自动旋转</b>，然后横持手机游玩'
+        : '点击下方按钮自动切换到横屏模式'}
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+      <button id="orient-yes" style="padding:12px 28px;border-radius:10px;border:none;
+        background:linear-gradient(135deg,#5f8cff,#c084fc);color:#fff;font-size:15px;
+        font-weight:700;cursor:pointer;min-width:120px;">
+        ${isIOS ? '✓ 我已开启，进入游戏' : '📱 切换横屏'}
+      </button>
+      <button id="orient-no" style="padding:12px 28px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);
+        background:transparent;color:#aaa;font-size:14px;font-weight:600;cursor:pointer;min-width:120px;">
+        竖屏也行
+      </button>
+    </div>
+    ${isIOS ? `
+    <div style="margin-top:16px;font-size:11px;color:#666;line-height:1.6;">
+      📌 iOS 设置方法：<br>
+      从屏幕右上角下滑打开控制中心<br>
+      确认 <b style="color:#aaa">🔒 竖排方向锁定</b> 已关闭
+    </div>` : ''}
+  `;
+
+  document.body.appendChild(overlay);
+
+  function dismiss(lockLandscape){
+    localStorage.setItem('td_orient_choice', lockLandscape ? 'landscape' : 'portrait');
+    overlay.remove();
+
+    if(lockLandscape && !isIOS){
+      // Android：使用 Screen Orientation API 锁定横屏
+      try{
+        const lock = screen.orientation && screen.orientation.lock;
+        if(lock){
+          screen.orientation.lock('landscape').catch(()=>{
+            // 无权限时（非全屏/非PWA），提示手动旋转
+            console.warn('[Orient] 无法锁定横屏，请手动旋转手机');
+          });
+        }
+      }catch(_){}
+      // 同时尝试请求全屏（PWA 中更容易锁定方向）
+      try{
+        const el = document.documentElement;
+        const rfs = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
+        if(rfs) rfs.call(el).then(()=>{
+          try{ screen.orientation.lock('landscape').catch(()=>{}); }catch(_){}
+        }).catch(()=>{});
+      }catch(_){}
     }
-    hint.style.display='flex';
-  } else if(hint){
-    hint.style.display='none';
   }
-}
-window.addEventListener('resize',_checkOrientation);
-window.addEventListener('orientationchange',_checkOrientation);
-_checkOrientation();
+
+  document.getElementById('orient-yes').addEventListener('click', ()=>dismiss(true));
+  document.getElementById('orient-no').addEventListener('click', ()=>dismiss(false));
+})();
 </script>
 
 <script>
